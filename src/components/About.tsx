@@ -26,7 +26,7 @@ export const About = () => {
               </div>
 
               <div className="pt-6">
-                <Button variant="hero" size="lg" className="group">
+                <Button variant="default" size="lg" className="group bg-primary hover:bg-primary/90 text-white">
                   Let's Talk About Your Business
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>

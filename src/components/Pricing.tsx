@@ -106,8 +106,8 @@ export const Pricing = () => {
 
               <CardFooter>
                 <Button 
-                  variant={plan.highlighted ? "hero" : "hero-outline"}
-                  className="w-full"
+                  variant={plan.highlighted ? "default" : "outline"}
+                  className={plan.highlighted ? "w-full bg-primary hover:bg-primary/90 text-white" : "w-full border-white/20 bg-transparent hover:bg-white/10"}
                   size="lg"
                 >
                   Schedule Consultation

@@ -21,12 +21,12 @@ export const Footer = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="lg" className="group">
+            <Button variant="default" size="lg" className="group bg-primary hover:bg-primary/90 text-white">
               <Calendar className="w-5 h-5" />
               Book Your Free Discovery Call
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="hero-outline" size="lg">
+            <Button variant="outline" size="lg" className="border-white/20 bg-transparent text-foreground hover:bg-white/10">
               <Mail className="w-5 h-5" />
               Email Us
             </Button>

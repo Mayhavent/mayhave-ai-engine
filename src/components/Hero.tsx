@@ -1,61 +1,45 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0 bg-background/60" />
-      </div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      {/* Pure black background */}
+      <div className="absolute inset-0 bg-black z-0" />
 
-      {/* Animated gradient orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-glow" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-glow" style={{ animationDelay: '1s' }} />
+      {/* Large centered purple gradient orb */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/40 rounded-full blur-[120px] animate-glow" />
       
       {/* Content */}
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">Helping businesses automate and scale</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white text-sm font-medium">
+            <span className="px-2 py-0.5 bg-white/20 rounded-full text-xs">New</span>
+            <span>Automated Voice Agent X Dashboard</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              AI Implementation
-            </span>
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
+            AI Consulting That Builds, Not
             <br />
-            That Delivers Results,
-            <br />
-            Not Just Reports
+            Just Advises.
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We don't hand you a strategy deck. We diagnose your processes, prescribe custom AI roadmaps, 
-            and implement real automation systems that save time and money.
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            We don't hand you a strategy deck. We implement real AI systems—agents, 
+            automations, and dashboards that move the needle.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="hero" size="lg" className="group">
-              Book a Discovery Call
+            <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-white group">
+              Get in touch
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="hero-outline" size="lg">
-              See Our Process
+            <Button variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10">
+              View services
             </Button>
           </div>
         </div>
@@ -66,3 +50,4 @@ export const Hero = () => {
     </section>
   );
 };
+

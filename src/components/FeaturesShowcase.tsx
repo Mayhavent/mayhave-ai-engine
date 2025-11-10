@@ -1,179 +1,149 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+export default function ServicesLayout() {
+  const services = [
+    {
+      badge: "Workflow Automation",
+      title: "Automate repetitive tasks",
+      desc: "We help you eliminate manual ops with automations that unify your tools and data, reduce errors, and speed up client delivery.",
+      tags: ["Internal ops", "Data sync", "RPA/AI"],
+      ctas: ["Book a call", "View automations"],
+      dark: true,
+    },
+    {
+      badge: "AI Assistants",
+      title: "AI Voice Agents",
+      desc: "From inbound call routing to outbound outreach and smart scheduling, our AI voice agents handle the chores so your team can focus on impact.",
+      tags: ["Phone", "Scheduling", "Help desk"],
+      ctas: ["Hear a demo", "How it works"],
+    },
+    {
+      badge: "Sales & Marketing",
+      title: "Accelerate Sales Growth",
+      desc: "Lead gen copilots, personalized outreach, and automated content creation that matches your brand while boosting pipeline.",
+      tags: ["Leads", "Outbound", "Scalable"],
+      ctas: ["Get a playbook", "See results"],
+      dark: true,
+    },
+    {
+      badge: "Custom Projects",
+      title: "Build Smarter Systems",
+      desc: "Whether you're starting from scratch or extending an existing system, we design robust AI products and data pipelines that scale.",
+      tags: ["Scoping", "DAO", "Consulting"],
+      ctas: ["Start a project", "Talk to engineering"],
+    },
+    {
+      badge: "Data & Analytics",
+      title: "Dashboards that drive decisions",
+      desc: "Live KPI boards, forecasting, and next-best-action recommendations—so teams act, not guess.",
+      tags: ["Forecasting", "Cohorts", "Anomaly alerts"],
+      ctas: ["See dashboards", "Pricing"],
+      dark: true,
+    },
+  ];
 
-const features = [
-  {
-    category: "Analytics",
-    title: "Dashboards & Decision Intelligence",
-    description: "Live KPI trends, heatmaps, and next-best action—so teams act, not guess.",
-    image: "dashboard",
-    imagePosition: "left",
-    buttons: [
-      { text: "Request Data Audit", variant: "default" as const },
-      { text: "ROI Calculator", variant: "outline" as const }
-    ]
-  },
-  {
-    category: "Workflow Automation",
-    title: "Automate repetitive tasks",
-    description: "We help you streamline manual operations by automating crucial tasks like data entry, reporting, scheduling, and repetitive workflows—so your team can focus on what really matters.",
-    image: "workflow",
-    imagePosition: "right",
-    buttons: [
-      { text: "Request Data Audit", variant: "default" as const },
-      { text: "CRM + Automation", variant: "outline" as const }
-    ]
-  },
-  {
-    category: "AI Assistance",
-    title: "AI Voice Agents",
-    description: "From inbound support to outbound sales and conversational lead qualification, we create AI voice agents that handle calls 24/7 to keep your business running around the clock.",
-    image: "voice",
-    imagePosition: "left",
-    buttons: [
-      { text: "Scheduling", variant: "outline" as const },
-      { text: "Lead Agents", variant: "outline" as const }
-    ]
-  },
-  {
-    category: "Sales & Marketing",
-    title: "Accelerate Sales Growth",
-    description: "AI tools for lead generation, personalized outreach, and automated content creation that scales your sales efforts and boosts conversion rates—all based on your unique data.",
-    image: "sales",
-    imagePosition: "right",
-    buttons: [
-      { text: "Leads", variant: "outline" as const },
-      { text: "Outreach", variant: "outline" as const },
-      { text: "Social Ads", variant: "outline" as const }
-    ]
-  },
-  {
-    category: "Custom Integrations",
-    title: "Build Smarter Systems",
-    description: "Whether you're starting from scratch or enhancing an existing platform, we create and optimize AI-powered workflows that work seamlessly across your tech stack.",
-    image: "systems",
-    imagePosition: "left",
-    buttons: [
-      { text: "Strategy", variant: "outline" as const },
-      { text: "Custom AI", variant: "outline" as const },
-      { text: "Consulting", variant: "outline" as const }
-    ]
-  }
-];
+  return (
+    <div className="min-h-screen w-full bg-black text-white">
+      {/* Top Hero */}
+      <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+          <span className="h-1 w-1 rounded-full bg-white/40" />
+          Our Services
+        </div>
+        <h1 className="text-center text-4xl font-bold tracking-tight md:text-6xl">
+          Dashboards & Decision
+          <br className="hidden md:block" /> Intelligence
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-white/70">
+          Live KPI boards, forecasts, and next-best actions—so teams act, not guess.
+        </p>
+      </section>
 
-const FeatureImage = ({ type }: { type: string }) => {
-  if (type === "dashboard") {
-    return (
-      <div className="relative w-full h-full bg-background border border-border/20 rounded-lg p-6">
-        <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span>Widgets · Insights (updated)</span>
-          </div>
-          <div className="space-y-2">
-            {["Yearly Spend", "Revenue Growth", "Performance Scoring", "Leads Generated", "Checklist"].map((item, i) => (
-              <div key={i} className="flex items-center justify-between bg-card/50 border border-border/10 rounded px-3 py-2">
-                <span className="text-sm">{item}</span>
-                <div className="w-2 h-2 rounded-full bg-primary/50" />
-              </div>
+      {/* Services list */}
+      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 pb-24 md:gap-16">
+        {services.map((s, idx) => (
+          <ServiceRow key={idx} service={s} reverse={idx % 2 === 1} />
+        ))}
+      </section>
+    </div>
+  );
+}
+
+function ServiceRow({ service, reverse = false }) {
+  return (
+    <div className={`grid items-center gap-8 md:grid-cols-2 ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}>
+      {/* Text card */}
+      <div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-wide text-white/70">
+          <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+          {service.badge}
+        </div>
+        <h3 className="text-2xl font-semibold md:text-3xl">{service.title}</h3>
+        <p className="mt-2 max-w-md text-white/70">{service.desc}</p>
+
+        {/* Tags */}
+        <div className="mt-4 flex flex-wrap gap-2">
+          {service.tags.map((t) => (
+            <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
+              {t}
+            </span>
+          ))}
+        </div>
+
+        {/* CTAs */}
+        <div className="mt-5 flex flex-wrap gap-3">
+          <a
+            href="#"
+            className="rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-fuchsia-500/20 hover:opacity-90"
+          >
+            {service.ctas[0]}
+          </a>
+          <a
+            href="#"
+            className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10"
+          >
+            {service.ctas[1]}
+          </a>
+        </div>
+      </div>
+
+      {/* Visual mockup */}
+      <div>
+        <MockWindow dark={service.dark} />
+      </div>
+    </div>
+  );
+}
+
+function MockWindow({ dark = false }) {
+  return (
+    <div
+      className={`relative rounded-2xl border p-5 shadow-2xl transition ${
+        dark ? "border-white/10 bg-gradient-to-b from-white/5 to-transparent" : "border-white/10 bg-white/5"
+      }`}
+    >
+      {/* glow ring */}
+      <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-500/10 via-violet-500/10 to-cyan-400/10 blur-2xl"></div>
+
+      <div className="relative space-y-3">
+        <div className="flex items-center gap-2 opacity-80">
+          <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+          <div className="ml-auto h-2 w-24 rounded bg-white/10" />
+        </div>
+
+        {/* Faux app surface */}
+        <div className="rounded-xl border border-white/10 bg-black/50 p-4">
+          <div className="mb-3 h-8 rounded-md bg-white/10"></div>
+
+          <div className="grid grid-cols-4 gap-2">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="h-24 rounded-lg border border-white/10 bg-white/5" />
             ))}
           </div>
-        </div>
-      </div>
-    );
-  }
-  
-  if (type === "voice") {
-    return (
-      <div className="relative w-full h-full bg-gradient-to-br from-purple-900/30 to-purple-700/20 border border-purple-500/20 rounded-lg flex items-center justify-center">
-        <div className="text-center space-y-4 p-8">
-          <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full border-2 border-white/50" />
-          </div>
-          <div className="space-y-2">
-            <p className="text-lg font-semibold">What can I help with?</p>
-            <p className="text-sm text-muted-foreground">AI-powered calling agent</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  
-  if (type === "workflow" || type === "sales" || type === "systems") {
-    return (
-      <div className="relative w-full h-full bg-background border border-border/20 rounded-lg p-6 flex items-center justify-center">
-        <div className="text-center space-y-3">
-          <div className="w-16 h-16 mx-auto rounded-lg bg-gradient-to-br from-purple-600/20 to-purple-400/10 border border-purple-500/20" />
-          <p className="text-sm text-muted-foreground">
-            {type === "workflow" && "Automated Workflow System"}
-            {type === "sales" && "Sales Analytics Dashboard"}
-            {type === "systems" && "Custom Integration Platform"}
-          </p>
-        </div>
-      </div>
-    );
-  }
-  
-  return null;
-};
 
-export const FeaturesShowcase = () => {
-  return (
-    <section className="py-24 px-4">
-      <div className="container mx-auto max-w-7xl space-y-32">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className={`grid md:grid-cols-2 gap-12 items-center ${
-              feature.imagePosition === "right" ? "md:grid-flow-col-dense" : ""
-            }`}
-          >
-            {/* Image */}
-            <div
-              className={`${
-                feature.imagePosition === "right" ? "md:col-start-2" : ""
-              } animate-fade-in`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="aspect-[4/3] w-full">
-                <FeatureImage type={feature.image} />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div
-              className={`space-y-6 ${
-                feature.imagePosition === "right" ? "md:col-start-1 md:row-start-1" : ""
-              } animate-fade-in`}
-              style={{ animationDelay: `${index * 0.1 + 0.1}s` }}
-            >
-              <Badge variant="secondary" className="text-xs">
-                {feature.category}
-              </Badge>
-              
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                {feature.title}
-              </h2>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-              
-              <div className="flex flex-wrap gap-3 pt-2">
-                {feature.buttons.map((button, i) => (
-                  <Button
-                    key={i}
-                    variant={button.variant}
-                    size="sm"
-                    className={button.variant === "default" ? "bg-primary hover:bg-primary/90 text-white" : ""}
-                  >
-                    {button.text}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
+          <div className="mt-4 h-10 rounded-lg bg-white/10" />
+        </div>
       </div>
-    </section>
+    </div>
   );
-};
+}

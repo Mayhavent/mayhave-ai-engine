@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
 export const Hero = () => {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Pure black background */}
       <div className="absolute inset-0 bg-black z-0" />
 
@@ -20,17 +18,12 @@ export const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
-            AI Consulting That Builds, Not
-            <br />
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">AI Consulting That Builds, Not Just Advises.<br />
             Just Advises.
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            We don't hand you a strategy deck. We implement real AI systems—agents, 
-            automations, and dashboards that move the needle.
-          </p>
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">We don’t hand you a strategy deck. We implement real AI systems—agents, automations, and dashboards that move the needle.</p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
@@ -47,7 +40,5 @@ export const Hero = () => {
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
-    </section>
-  );
+    </section>;
 };
-

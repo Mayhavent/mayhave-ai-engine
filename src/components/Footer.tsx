@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
-
 export const Footer = () => {
-  return (
-    <footer className="relative overflow-hidden bg-background">
+  return <footer className="relative overflow-hidden bg-background">
       {/* CTA Section */}
       <section className="py-24 px-4 relative">
         <div className="container mx-auto max-w-4xl">
@@ -14,8 +12,7 @@ export const Footer = () => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
             
             <div className="relative z-10 px-8 py-16 md:px-16 md:py-20 text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
-                Let AI do the Work so<br />you can Scale Faster
+              <h2 className="text-4xl md:text-5xl font-bold text-white">Let AI Handle All The Work So You Can Scale Faster<br />you can Scale Faster
               </h2>
               
               <p className="text-lg text-white/90">
@@ -49,11 +46,7 @@ export const Footer = () => {
               <div>
                 <p className="text-sm font-medium text-foreground mb-3">Join our newsletter</p>
                 <div className="flex gap-2">
-                  <Input 
-                    type="email" 
-                    placeholder="name@email.com" 
-                    className="bg-muted border-border text-sm"
-                  />
+                  <Input type="email" placeholder="name@email.com" className="bg-muted border-border text-sm" />
                   <Button size="sm" variant="destructive" className="shrink-0">
                     →
                   </Button>
@@ -112,6 +105,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };

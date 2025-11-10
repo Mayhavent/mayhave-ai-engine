@@ -1,58 +1,114 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export const Footer = () => {
   return (
-    <footer className="relative overflow-hidden">
+    <footer className="relative overflow-hidden bg-background">
       {/* CTA Section */}
       <section className="py-24 px-4 relative">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-        
-        <div className="container mx-auto max-w-4xl text-center relative z-10 space-y-8 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Ready to Save Time and <br />
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Cut Costs with AI?</span>
-          </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Book your free discovery call and let's discuss how AI can transform your business
-          </p>
+        <div className="container mx-auto max-w-4xl">
+          <div className="relative rounded-3xl overflow-hidden">
+            {/* Purple gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 via-purple-800/60 to-purple-950/80" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
+            
+            <div className="relative z-10 px-8 py-16 md:px-16 md:py-20 text-center space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                Let AI do the Work so<br />you can Scale Faster
+              </h2>
+              
+              <p className="text-lg text-white/90">
+                Book a Call Today and Start Automating
+              </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="default" size="lg" className="group bg-primary hover:bg-primary/90 text-white">
-              <Calendar className="w-5 h-5" />
-              Book Your Free Discovery Call
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-white/20 bg-transparent text-foreground hover:bg-white/10">
-              <Mail className="w-5 h-5" />
-              Email Us
-            </Button>
+              <div className="pt-4">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white group">
+                  Book a free call
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </div>
           </div>
-
-          <p className="text-sm text-muted-foreground pt-4">
-            contact@mayhave.ai
-          </p>
         </div>
       </section>
 
-      {/* Footer Bottom */}
-      <div className="border-t border-border/50 py-8 px-4">
+      {/* Main Footer */}
+      <div className="border-t border-border/50 py-16 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            {/* Brand & Newsletter */}
+            <div className="md:col-span-1 space-y-6">
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">AI Consulting</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  We ship production systems—fast. Automations and agents tailored to your stack, measured against real KPIs.
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-sm font-medium text-foreground mb-3">Join our newsletter</p>
+                <div className="flex gap-2">
+                  <Input 
+                    type="email" 
+                    placeholder="name@email.com" 
+                    className="bg-muted border-border text-sm"
+                  />
+                  <Button size="sm" variant="destructive" className="shrink-0">
+                    →
+                  </Button>
+                  <Button size="sm" className="bg-primary hover:bg-primary/90">
+                    Subscribe
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Links Column */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Links</h4>
+              <nav className="flex flex-col gap-3">
+                <a href="#services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Services</a>
+                <a href="#process" className="text-sm text-muted-foreground hover:text-primary transition-colors">Process</a>
+                <a href="#case-studies" className="text-sm text-muted-foreground hover:text-primary transition-colors">Case studies</a>
+                <a href="#benefits" className="text-sm text-muted-foreground hover:text-primary transition-colors">Benefits</a>
+                <a href="#pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">Pricing</a>
+              </nav>
+            </div>
+
+            {/* Pages Column */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Pages</h4>
+              <nav className="flex flex-col gap-3">
+                <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Home</a>
+                <a href="#about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About</a>
+                <a href="#blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</a>
+                <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a>
+                <a href="/404" className="text-sm text-muted-foreground hover:text-primary transition-colors">404</a>
+              </nav>
+            </div>
+
+            {/* Socials Column */}
+            <div>
+              <h4 className="text-sm font-semibold text-foreground mb-4">Socials</h4>
+              <nav className="flex flex-col gap-3">
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Instagram</a>
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Facebook</a>
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">LinkedIn</a>
+                <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Twitter</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Bottom Bar */}
+      <div className="border-t border-border/50 py-6 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <div>
-              <p className="font-bold text-foreground text-lg mb-1">Mayhave</p>
-              <p>© {new Date().getFullYear()} Mayhave. All rights reserved.</p>
-            </div>
-            
-            <nav className="flex gap-6">
-              <a href="#services" className="hover:text-primary transition-colors">Services</a>
-              <a href="#case-studies" className="hover:text-primary transition-colors">Case Studies</a>
-              <a href="#about" className="hover:text-primary transition-colors">About</a>
-              <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
-            </nav>
+            <p>AI Consulting</p>
+            <p className="text-center">Start small, build systems for scale</p>
+            <p>© AI Consulting</p>
           </div>
         </div>
       </div>

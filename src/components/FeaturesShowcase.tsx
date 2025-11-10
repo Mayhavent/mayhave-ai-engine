@@ -9,13 +9,6 @@ export default function ServicesLayout() {
       dark: true,
     },
     {
-      badge: "AI Assistants",
-      title: "AI Voice Agents",
-      desc: "From inbound call routing to outbound outreach and smart scheduling, our AI voice agents handle the chores so your team can focus on impact.",
-      tags: ["Phone", "Scheduling", "Help desk"],
-      ctas: ["Hear a demo", "How it works"],
-    },
-    {
       badge: "Sales & Marketing",
       title: "Accelerate Sales Growth",
       desc: "Lead gen copilots, personalized outreach, and automated content creation that matches your brand while boosting pipeline.",

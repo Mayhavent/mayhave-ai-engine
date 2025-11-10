@@ -37,10 +37,6 @@ export default function ServicesLayout() {
     <div className="min-h-screen w-full bg-black text-white">
       {/* Top Hero */}
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-10">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
-          <span className="h-1 w-1 rounded-full bg-white/40" />
-          Our Services
-        </div>
         <h1 className="text-center text-4xl font-bold tracking-tight md:text-6xl">
           Dashboards & Decision
           <br className="hidden md:block" /> Intelligence

@@ -71,22 +71,6 @@ function ServiceRow({ service, reverse = false }) {
             </span>
           ))}
         </div>
-
-        {/* CTAs */}
-        <div className="mt-5 flex flex-wrap gap-3">
-          <a
-            href="#"
-            className="rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-fuchsia-500/20 hover:opacity-90"
-          >
-            {service.ctas[0]}
-          </a>
-          <a
-            href="#"
-            className="rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10"
-          >
-            {service.ctas[1]}
-          </a>
-        </div>
       </div>
 
       {/* Visual mockup */}

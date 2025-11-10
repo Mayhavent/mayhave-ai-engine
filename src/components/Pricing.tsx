@@ -1,50 +1,49 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check } from "lucide-react";
+import { Check, Rocket, Zap, Crown } from "lucide-react";
 
 const plans = [
   {
-    name: "Starter Package",
-    tagline: "Get Started with AI",
-    price: "$2,500",
-    description: "Best for: Small businesses testing AI",
+    name: "Starter",
+    icon: Rocket,
+    price: "Request for pricing",
+    description: "Perfect for small businesses starting with AI automation",
     features: [
-      "Process audit & AI roadmap",
-      "1-2 automation workflows",
-      "30-day support",
-      "Basic implementation"
+      "Basic workflow automation",
+      "AI-powered personal assistant",
+      "Standard analytics & reporting",
+      "Email & chat support",
+      "Up to 3 AI integrations"
     ],
     highlighted: false
   },
   {
-    name: "Professional Package",
-    tagline: "Full AI Transformation",
-    price: "$5,000",
-    description: "Best for: Growing businesses ready to scale",
-    badge: "MOST POPULAR",
+    name: "Professional",
+    icon: Zap,
+    price: "Request for pricing",
+    description: "Perfect for small businesses starting with AI automation",
+    badge: "Popular",
     features: [
-      "Complete process diagnosis",
-      "3-5 custom automations",
-      "AI agent implementation",
-      "Analytics dashboard",
-      "90-day support & optimization",
-      "Priority implementation"
+      "Advanced workflow automation",
+      "AI-driven sales & marketing tools",
+      "Enhanced data analytics & insights",
+      "Priority customer support",
+      "Up to 10 AI integrations"
     ],
     highlighted: true
   },
   {
-    name: "Enterprise Package",
-    tagline: "Custom AI Solutions",
+    name: "Enterprise",
+    icon: Crown,
     price: "Custom",
-    description: "Best for: Established businesses",
+    description: "Perfect for small businesses starting with AI automation",
     features: [
-      "Unlimited automations",
-      "Multi-agent systems",
-      "Advanced analytics & reporting",
-      "Dedicated consultant",
-      "Ongoing optimization",
-      "White-glove service"
+      "Fully customizable AI automation",
+      "Dedicated AI business consultant",
+      "Enterprise-grade compliance",
+      "24/7 VIP support",
+      "Unlimited AI integrations"
     ],
     highlighted: false
   }
@@ -52,69 +51,77 @@ const plans = [
 
 export const Pricing = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      
+    <section id="pricing" className="py-24 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Simple, <span className="bg-gradient-primary bg-clip-text text-transparent">Transparent</span> Pricing
+          <Badge className="bg-primary/20 text-primary border-primary/30 mb-4">
+            Pricing
+          </Badge>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            The Best AI Automation, at the Right Price
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the package that fits your business needs
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Choose a plan that fits your business needs and start automating with AI
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index}
-              className={`relative flex flex-col animate-fade-in-up ${
-                plan.highlighted 
-                  ? 'border-primary shadow-glow scale-105 bg-card' 
-                  : 'bg-card/50 backdrop-blur-sm border-primary/10'
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {plan.badge && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-primary text-foreground border-0">
-                  {plan.badge}
-                </Badge>
-              )}
-              
-              <CardHeader className="pb-8">
-                <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <CardDescription className="text-base">{plan.tagline}</CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-muted-foreground ml-2">starting</span>}
-                </div>
-                <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
-              </CardHeader>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {plans.map((plan, index) => {
+            const IconComponent = plan.icon;
+            return (
+              <Card 
+                key={index}
+                className={`relative flex flex-col animate-fade-in-up ${
+                  plan.highlighted 
+                    ? 'bg-gradient-to-br from-purple-900/50 to-purple-700/30 border-purple-500/50' 
+                    : 'bg-black border-border'
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {plan.badge && (
+                  <Badge className="absolute -top-3 right-4 bg-primary text-white border-0 px-3 py-1">
+                    {plan.badge}
+                  </Badge>
+                )}
+                
+                <CardHeader className="pb-6 space-y-4">
+                  <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
+                    plan.highlighted ? 'bg-primary/20' : 'bg-primary/10'
+                  }`}>
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl text-foreground">{plan.name}</CardTitle>
+                  <div className="space-y-2">
+                    <div className="text-3xl font-bold text-foreground">{plan.price}</div>
+                    <CardDescription className="text-muted-foreground">
+                      {plan.description}
+                    </CardDescription>
+                  </div>
+                </CardHeader>
 
-              <CardContent className="flex-grow">
-                <ul className="space-y-3">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
+                <CardContent className="flex-grow">
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
 
-              <CardFooter>
-                <Button 
-                  variant={plan.highlighted ? "default" : "outline"}
-                  className={plan.highlighted ? "w-full bg-primary hover:bg-primary/90 text-white" : "w-full border-white/20 bg-transparent hover:bg-white/10"}
-                  size="lg"
-                >
-                  Schedule Consultation
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                <CardFooter className="pt-6">
+                  <Button 
+                    variant={plan.highlighted ? "default" : "outline"}
+                    className="w-full"
+                    size="lg"
+                  >
+                    Schedule a call
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

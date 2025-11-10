@@ -15,7 +15,7 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="text-2xl font-bold">
-              <span className="text-foreground">AIC</span>
+              <span className="text-foreground">Mayhave</span>
               <span className="text-muted-foreground mx-2">|</span>
               <span className="text-foreground">AI Consulting</span>
             </div>

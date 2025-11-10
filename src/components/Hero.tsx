@@ -18,7 +18,8 @@ export const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">AI Consulting That Builds, Not Just Advises.<br />
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">AI Consulting That Builds, NJust Advises.
+          <br />
             Just Advises.
           </h1>
 

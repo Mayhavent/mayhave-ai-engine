@@ -47,7 +47,7 @@ export const Benefits = () => {
             Benefits
           </div>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-            AI isn&apos;t just a tool , it&apos;s the
+            AI isn&apos;t just a tool, it&apos;s the
             <br />
             new infrastructure of business.
           </h2>

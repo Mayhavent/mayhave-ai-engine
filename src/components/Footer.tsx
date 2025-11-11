@@ -13,7 +13,7 @@ export const Footer = () => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
             
             <div className="relative z-10 px-8 py-16 md:px-16 md:py-20 text-center space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white">Let AI Handle All The Work So You Can Scale Faster>
+              <h2 className="text-4xl md:text-5xl font-bold text-white">Let AI Handle All The Work So You Can Scale Faster</h2>
               
               <p className="text-lg text-white/90">
                 Book a Call Today and Start Automating

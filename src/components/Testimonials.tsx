@@ -17,8 +17,7 @@ export const Testimonials = () => {
   return <section className="py-24 px-4 bg-muted/30">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Why Businesses Love Our AI Solutions<span className="bg-gradient-primary bg-clip-text text-transparent">Clients Say</span>
-          </h2>
+          
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Real businesses, real results with AI automation.</p>
         </div>
 

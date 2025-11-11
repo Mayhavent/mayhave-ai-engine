@@ -25,8 +25,7 @@ export const FAQ = () => {
   return <section className="py-24 px-4">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold">We’ve Got the Answers You’re Looking For<span className="bg-gradient-primary bg-clip-text text-transparent">Questions</span>
-          </h2>
+          
           <p className="text-xl text-muted-foreground">Quick guide to all your AI automation questions.</p>
         </div>
 

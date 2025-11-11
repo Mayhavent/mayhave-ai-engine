@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const scrollToSection = (id: string) => {
@@ -47,9 +48,11 @@ export const Header = () => {
             >
               Contact
             </button>
-            <Button variant="default" size="default" className="bg-primary hover:bg-primary/90 text-white">
-              Book a call
-            </Button>
+            <Link to="/book">
+              <Button variant="default" size="default" className="bg-primary hover:bg-primary/90 text-white">
+                Book a call
+              </Button>
+            </Link>
           </nav>
         </div>
       </div>

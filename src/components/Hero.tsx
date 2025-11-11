@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -33,10 +34,12 @@ export const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-white group">
-              Get in touch
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <Link to="/book">
+              <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-white group">
+                Get in touch
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
             <Button variant="outline" size="lg" className="border-white/20 bg-transparent text-white hover:bg-white/10">
               View services
             </Button>

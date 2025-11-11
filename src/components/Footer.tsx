@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
 export const Footer = () => {
   return <footer className="relative overflow-hidden bg-background">
       {/* CTA Section */}
@@ -20,10 +21,12 @@ export const Footer = () => {
               </p>
 
               <div className="pt-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white group">
-                  Book a free call
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <Link to="/book">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white group">
+                    Book a free call
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

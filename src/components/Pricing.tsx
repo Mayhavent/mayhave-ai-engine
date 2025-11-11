@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Rocket, Zap, Crown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const plans = [
   {
@@ -111,13 +112,15 @@ export const Pricing = () => {
                 </CardContent>
 
                 <CardFooter className="pt-6">
-                  <Button 
-                    variant={plan.highlighted ? "default" : "outline"}
-                    className="w-full"
-                    size="lg"
-                  >
-                    Schedule a call
-                  </Button>
+                  <Link to="/book" className="w-full">
+                    <Button 
+                      variant={plan.highlighted ? "default" : "outline"}
+                      className="w-full"
+                      size="lg"
+                    >
+                      Schedule a call
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             );

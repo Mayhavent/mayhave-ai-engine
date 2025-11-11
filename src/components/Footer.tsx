@@ -45,18 +45,7 @@ export const Footer = () => {
                 </p>
               </div>
               
-              <div>
-                <p className="text-sm font-medium text-foreground mb-3">Join our newsletter</p>
-                <div className="flex gap-2">
-                  <Input type="email" placeholder="name@email.com" className="bg-muted border-border text-sm" />
-                  <Button size="sm" variant="destructive" className="shrink-0">
-                    →
-                  </Button>
-                  <Button size="sm" className="bg-primary hover:bg-primary/90">
-                    Subscribe
-                  </Button>
-                </div>
-              </div>
+              
             </div>
 
             {/* Links Column */}

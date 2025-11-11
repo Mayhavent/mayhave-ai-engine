@@ -7,21 +7,17 @@ import { Pricing } from "@/components/Pricing";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <Hero />
       <FeaturesShowcase />
       <Process />
       <Benefits />
       <Pricing />
-      <Testimonials />
+      
       <FAQ />
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
